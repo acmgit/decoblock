@@ -1,0 +1,17 @@
+# textdomain: decoblock
+
+
+### init.lua ###
+
+black=
+blue=
+brown=
+cyan=
+green=
+magenta=
+white=
+yellow=
+
+### nodes.lua ###
+
+Framed glass @1=

@@ -18,6 +18,8 @@ decoblock.version = 1
 decoblock.revision = 0
 decoblock.S = minetest.get_translator(minetest.get_current_modname())
 
+local S = decoblock.S
+
 decoblock.colors = {
                      {"white", "#FFFFFF", S("white")},
                      {"yellow", "#FFFF00", S("yellow")},

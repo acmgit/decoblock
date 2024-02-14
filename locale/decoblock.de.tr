@@ -1,0 +1,17 @@
+# textdomain: decoblock
+
+
+### init.lua ###
+
+black=Schwarz
+blue=Blau
+brown=Braun
+cyan=Cyan
+green=Grün
+magenta=Magenta
+white=Weiss
+yellow=Gelb
+
+### nodes.lua ###
+
+Framed glass @1=Gerahmtes Glas
