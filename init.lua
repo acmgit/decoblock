@@ -34,5 +34,6 @@ decoblock.colors = {
 
 dofile(decoblock.modpath .. "/nodes.lua")
 dofile(decoblock.modpath .. "/recipes.lua")
+dofile(decoblock.modpath .. "/register_mods.lua")
 
 minetest.log("action", "MOD [" .. decoblock.modname .. "] Version " .. decoblock.version .. "." .. decoblock.revision .. " loaded.")
