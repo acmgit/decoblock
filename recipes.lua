@@ -9,6 +9,12 @@ for key,color in pairs(decoblock.colors) do
                   {"","default:glass",""},
                 }
         })
+  minetest.register_craft({
+          output = "decoblock:game_piece_" .. color[1],
+          recipe = {
+                     {"dye:" .. color[1],"decoblock:bowling_pin",""},
+                   }
+           })
 
 end
 
@@ -18,5 +24,12 @@ minetest.register_craft({
              {"default:steel_ingot","dye:white",""},
              {"group:wood","dye:red",""},
              {"group:wood","default:obsidian_shard",""},
+           }
+   })
+
+minetest.register_craft({
+  output = "decoblock:smoke 5",
+  recipe = {
+             {"group:wood","group:wood","default:torch"},
            }
    })
