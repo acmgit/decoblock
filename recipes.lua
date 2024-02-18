@@ -12,3 +12,11 @@ for key,color in pairs(decoblock.colors) do
 
 end
 
+minetest.register_craft({
+  output = "decoblock:bowling_pin 2",
+  recipe = {
+             {"default:steel_ingot","dye:white",""},
+             {"group:wood","dye:red",""},
+             {"group:wood","default:obsidian_shard",""},
+           }
+   })
