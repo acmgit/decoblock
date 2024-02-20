@@ -1,6 +1,8 @@
 -- decoblock.nodes.lua
 
 local S = decoblock.S
+local intensity = 96
+local lib = decoblock.lib
 
 minetest.register_node("decoblock:bowling_pin", {
 	description = S("Bowling Pin"),
@@ -37,7 +39,6 @@ minetest.register_node("decoblock:bowling_pin", {
 
 for key,color in pairs(decoblock.colors) do
 
-    local intensity = 96
 	minetest.register_node("decoblock:framed_glass_" .. color[1], {
 		description = S("Framed glass @1", color[3]),
 		drawtype = "glasslike_framed_optional",
@@ -109,3 +110,42 @@ minetest.register_node("decoblock:smoke", {
 
 	},
 })
+
+
+intensity = 55
+minetest.register_node("decoblock:dice", {
+	description = S("Dice"),
+	paramtype = "light",
+	paramtype2 = "facedir",
+	sunlight_propagates = false,
+	is_ground_content = false,
+	tiles = {
+		"default_wood.png^[colorize:#FFFFFF:" .. intensity .. "^[overlay:" .. "decoblock_dice_1.png",
+		"default_wood.png^[colorize:#FFFFFF:" .. intensity .. "^[overlay:" .. "decoblock_dice_6.png",
+		"default_wood.png^[colorize:#FFFFFF:" .. intensity .. "^[overlay:" .. "decoblock_dice_4.png",
+		"default_wood.png^[colorize:#FFFFFF:" .. intensity .. "^[overlay:" .. "decoblock_dice_3.png",
+		"default_wood.png^[colorize:#FFFFFF:" .. intensity .. "^[overlay:" .. "decoblock_dice_5.png",
+		"default_wood.png^[colorize:#FFFFFF:" .. intensity .. "^[overlay:" .. "decoblock_dice_2.png",
+	},
+	drawtype = "nodebox",
+	paramtype = "light",
+	on_punch = function(pos, node, puncher, pointed_thing)
+						if (not puncher) then return end
+					    local item_stack = puncher:get_wielded_item()
+					    local item_name = item_stack:get_name()
+					    local player = puncher:get_player_name()
+
+					    if(not item_name) then
+					        lib.announce(player, lib.roll_dice())
+
+					    elseif (string.match(item_name, "pick") or (string.match(item_name, "axe"))) then
+						    minetest.node_dig(pos, node, puncher)
+
+				        else
+				            lib.announce(player, lib.roll_dice())
+
+				        end
+
+               end
+})
+

@@ -12,9 +12,14 @@ magenta=
 white=
 yellow=
 
+### lib.lua ###
+
+rolled the dice.=
+
 ### nodes.lua ###
 
 Bowling Pin=
+Dice=
 Framed glass @1=
 Game Piece @1=
 Smoke=

@@ -32,6 +32,7 @@ decoblock.colors = {
 
                   }
 
+dofile(decoblock.modpath .. "/lib.lua")
 dofile(decoblock.modpath .. "/nodes.lua")
 dofile(decoblock.modpath .. "/recipes.lua")
 dofile(decoblock.modpath .. "/register_mods.lua")

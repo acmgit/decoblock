@@ -12,9 +12,14 @@ magenta=Magenta
 white=Weiss
 yellow=Gelb
 
+### lib.lua ###
+
+rolled the dice.=wirft den Würfel.
+
 ### nodes.lua ###
 
 Bowling Pin=Bowling Kegel
+Dice=Würfel
 Framed glass @1=Gerahmtes Glas @1
 Game Piece @1=Spielfigur @1
 Smoke=Rauch
