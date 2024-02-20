@@ -33,3 +33,10 @@ minetest.register_craft({
              {"group:wood","group:wood","default:torch"},
            }
    })
+
+minetest.register_craft({
+  output = "decoblock:dice",
+  recipe = {
+             {"dye:white","group:wood","dye:red"},
+           }
+   })
