@@ -102,8 +102,8 @@ minetest.register_node("decoblock:smoke", {
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
+				aspect_w = 32,
+				aspect_h = 32,
 				length = 1.5
 			},
 		},
