@@ -40,3 +40,12 @@ minetest.register_craft({
              {"dye:white","group:wood","dye:red"},
            }
    })
+
+minetest.register_craft({
+  output = "decoblock:black_white_black",
+  recipe = {
+             {"group:stone","dye:black",""},
+             {"default:mese_crystal_fragment","dye:white",""},
+             {"","dye:black",""}
+           }
+   })

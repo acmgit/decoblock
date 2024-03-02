@@ -149,3 +149,15 @@ minetest.register_node("decoblock:dice", {
                end
 })
 
+minetest.register_node("decoblock:black_white_black", {
+	description = S("Black white black"),
+	paramtype = "light",
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	light_source = default.LIGHT_MAX-6,
+	tiles = {"decoblock_black_white_black.png"},
+	drawtype = "nodebox",
+	groups = {cracky = 3, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+})
