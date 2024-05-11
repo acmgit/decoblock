@@ -49,3 +49,10 @@ minetest.register_craft({
              {"","dye:black",""}
            }
    })
+
+minetest.register_craft({
+  output = "decoblock:cooking_pot",
+  recipe = {
+             {"default:iron_lump","dye:brown","default:iron_lump"},
+           }
+   })

@@ -172,10 +172,9 @@ minetest.register_node("decoblock:cooking_pot", {
 	tiles = {
 				"decoblock_cooking_pot.png",
 			},
-	--inventory_image = "cucina_vegana_coffee_cup_inv.png",
-	--wield_image = "cucina_vegana_coffee_cup_inv.png",
 	paramtype = "light",
 	is_ground_content = false,
+	paramtype2 = "facedir",
 	param2 = "4dir",
 	walkable = true,
 	selection_box = {
@@ -183,4 +182,19 @@ minetest.register_node("decoblock:cooking_pot", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, .03, 0.25}
 	},
 	groups = {dig_immediate = 3, attached_node = 1, food_vegan = 1, eatable = 1},
+	on_punch = function(pos, node, puncher, pointed_thing)
+						if (not puncher) then return end
+					    local item_stack = puncher:get_wielded_item()
+					    local item_name = item_stack:get_name()
+					    local player = puncher:get_player_name()
+
+                       if (string.match(item_name, "pick") or (string.match(item_name, "axe")) or (string.match(item_name, "sword"))) then
+                            minetest.sound_play("decoblock_cooking_pot", {loop = false})
+
+                       else
+						    minetest.node_dig(pos, node, puncher)
+
+				        end
+
+               end
 })
