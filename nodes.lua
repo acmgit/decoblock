@@ -60,6 +60,7 @@ for key,color in pairs(decoblock.colors) do
 			sunlight_propagates = false,
 			is_ground_content = false,
 			groups = {snappy = 3, cracky = 3},
+			use_texture_alpha="clip",
 			tiles = {
 				"decoblock_bowling_pin_top.png^[colorize:" .. color[2] .. ":" .. intensity+32,
 				"decoblock_bowling_pin_bottom.png^[colorize:" .. color[2] .. ":" .. intensity+32,
@@ -160,4 +161,26 @@ minetest.register_node("decoblock:black_white_black", {
 	drawtype = "nodebox",
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("decoblock:cooking_pot", {
+	description = S("Cooking Pot"),
+	drawtype = "mesh",
+	mesh = "decoblock_cooking_pot.obj",
+	inventory_image = "decoblock_cooking_pot_inventory.png",
+	wield_image = "decoblock_cooking_pot_inventory.png",
+	tiles = {
+				"decoblock_cooking_pot.png",
+			},
+	--inventory_image = "cucina_vegana_coffee_cup_inv.png",
+	--wield_image = "cucina_vegana_coffee_cup_inv.png",
+	paramtype = "light",
+	is_ground_content = false,
+	param2 = "4dir",
+	walkable = true,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, .03, 0.25}
+	},
+	groups = {dig_immediate = 3, attached_node = 1, food_vegan = 1, eatable = 1},
 })
