@@ -164,13 +164,12 @@ minetest.register_node("decoblock:black_white_black", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("decoblock:black_cobble", {
-	description = S("Black Cobble"),
-	paramtype2 = "facedir",
-	is_ground_content = false,
-	tiles = {"default_cobble.png^[colorize:#333333:" .. intensity},
-	drawtype = "nodebox",
+minetest.register_node("decoblock:black_stone", {
+	description = S("Black Stone"),
+	tiles = {"default_stone.png^[colorize:#000000:100"},
 	groups = {cracky = 3, stone = 1},
+	drop = "default:cobble",
+	legacy_mineral = true,
 	sounds = default.node_sound_stone_defaults(),
 })
 

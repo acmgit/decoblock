@@ -51,6 +51,14 @@ minetest.register_craft({
    })
 
 minetest.register_craft({
+  output = "decoblock:black_stone 3",
+  recipe = {
+             {"default:stone","default:stone","default:stone"},
+             {"multidecor:consolidated_oil","multidecor:consolidated_oil","multidecor:consolidated_oil"},
+           }
+   })
+
+minetest.register_craft({
   output = "decoblock:cooking_pot",
   recipe = {
              {"default:iron_lump","dye:brown","default:iron_lump"},
