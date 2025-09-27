@@ -108,8 +108,9 @@ minetest.register_node("decoblock:smoke", {
 				length = 1.5
 			},
 		},
-
+		
 	},
+	groups = {cracky = 3},
 })
 
 
@@ -158,6 +159,16 @@ minetest.register_node("decoblock:black_white_black", {
 	is_ground_content = false,
 	light_source = default.LIGHT_MAX-6,
 	tiles = {"decoblock_black_white_black.png"},
+	drawtype = "nodebox",
+	groups = {cracky = 3, stone = 1},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("decoblock:black_cobble", {
+	description = S("Black Cobble"),
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	tiles = {"default_cobble.png^[colorize:#333333:" .. intensity .. "},
 	drawtype = "nodebox",
 	groups = {cracky = 3, stone = 1},
 	sounds = default.node_sound_stone_defaults(),
