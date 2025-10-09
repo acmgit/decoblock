@@ -47,6 +47,7 @@ for key,color in pairs(decoblock.colors) do
 		light_source = 3,
 		paramtype2 = "facedir",
 		sunlight_propagates = true,
+		use_texture_alpha = "clip",
 		is_ground_content = false,
 		groups = {cracky = 3, oddly_breakable_by_hand = 3},
 		sounds = default.node_sound_glass_defaults()
